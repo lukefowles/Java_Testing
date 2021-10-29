@@ -12,6 +12,10 @@ public class PeopleService{
             throw new IllegalArgumentException("Input cannot be empty or null");
         }
 
+        if (people == null) {
+            throw new NullPointerException();
+        }
+
         return people.stream().filter(person -> person.getGender().equals(Gender.FEMALE))
                 .collect(Collectors.toList());
     }

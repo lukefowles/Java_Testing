@@ -45,8 +45,6 @@ class PeopleServiceTest {
         //Given
           List<Person> people = List.of();
 
-          List<Person> actual = List.of();
-
 //        //When
 
 //        //Then
@@ -57,16 +55,13 @@ class PeopleServiceTest {
     @Test
     void nullArgumentShouldThrowError() {
         //Given
-        List<Person> people = List.of();
+        List<Person> people = null;
 
-        List<Person> actual = List.of();
+//      //When
 
-//        //When
-
-//        //Then
+//      //Then
         Assertions.assertThatThrownBy(() -> peopleService.isFemale(people))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("Input cannot be empty or null");
+                .isInstanceOf(NullPointerException.class);
     }
 
 
